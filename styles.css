@@ -1,0 +1,143 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    background-color: #e8f5e9;
+    color: #333;
+    overflow-x: hidden;
+  }
+  
+  header {
+    width: 100%;
+    padding: 50px 20px;
+    background: linear-gradient(90deg, #2e7d32, #66bb6a);
+    color: white;
+    text-align: center;
+    position: relative;
+  }
+  
+  header h1 {
+    font-size: 2.8rem;
+    margin-bottom: 10px;
+  }
+  
+  .challenge-box {
+    background: #ffffff22;
+    border: 2px dashed #ffffff88;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    margin-top: 20px;
+  }
+  
+  main {
+    padding: 50px 20px;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  section {
+    display: none;
+    animation: fadeIn 0.7s ease;
+  }
+  
+  section.active {
+    display: block;
+  }
+  
+  h2 {
+    font-size: 2rem;
+    color: #2e7d32;
+    margin-bottom: 20px;
+  }
+  
+  p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+  }
+  
+  button {
+    background: #4caf50;
+    border: none;
+    padding: 14px 28px;
+    font-size: 1.1rem;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    margin-top: 30px;
+    transition: background 0.3s, transform 0.2s;
+  }
+  
+  button:hover {
+    background: #388e3c;
+    transform: scale(1.05);
+  }
+  
+  select {
+    width: 100%;
+    padding: 12px;
+    font-size: 1rem;
+    margin-top: 15px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background-color: white;
+  }
+  
+  .tip-box {
+    background: #eef7ee;
+    padding: 20px;
+    border-left: 4px solid #4caf50;
+    margin-top: 20px;
+    border-radius: 8px;
+    font-size: 1rem;
+  }
+  
+  .challenge-highlight {
+    margin: 40px 0;
+    padding: 30px;
+    background: #dcedc8;
+    border-left: 6px solid #689f38;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border-radius: 12px;
+    text-align: center;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .loader {
+    border: 6px solid #c8e6c9;
+    border-top: 6px solid #2e7d32;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 0.8s linear infinite;
+    margin: 40px auto;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  .result-preview {
+    background: #f1f8e9;
+    padding: 20px;
+    border-left: 5px solid #7cb342;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+  }
