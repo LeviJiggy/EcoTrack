@@ -1,143 +1,236 @@
 * {
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: 'Inter', sans-serif;
-    margin: 0;
-    background-color: #e8f5e9;
-    color: #333;
-    overflow-x: hidden;
-  }
-  
-  header {
-    width: 100%;
-    padding: 50px 20px;
-    background: linear-gradient(90deg, #2e7d32, #66bb6a);
-    color: white;
-    text-align: center;
-    position: relative;
-  }
-  
-  header h1 {
-    font-size: 2.8rem;
-    margin-bottom: 10px;
-  }
-  
-  .challenge-box {
-    background: #ffffff22;
-    border: 2px dashed #ffffff88;
-    padding: 15px;
-    border-radius: 10px;
-    font-size: 1.1rem;
-    margin-top: 20px;
-  }
-  
-  main {
-    padding: 50px 20px;
-    width: 100%;
-    max-width: 900px;
-    margin: 0 auto;
-  }
-  
-  section {
-    display: none;
-    animation: fadeIn 0.7s ease;
-  }
-  
-  section.active {
-    display: block;
-  }
-  
-  h2 {
-    font-size: 2rem;
-    color: #2e7d32;
-    margin-bottom: 20px;
-  }
-  
-  p {
-    font-size: 1.2rem;
-    line-height: 1.6;
-  }
-  
-  button {
-    background: #4caf50;
-    border: none;
-    padding: 14px 28px;
-    font-size: 1.1rem;
-    border-radius: 10px;
-    color: white;
-    cursor: pointer;
-    margin-top: 30px;
-    transition: background 0.3s, transform 0.2s;
-  }
-  
-  button:hover {
-    background: #388e3c;
-    transform: scale(1.05);
-  }
-  
-  select {
-    width: 100%;
-    padding: 12px;
-    font-size: 1rem;
-    margin-top: 15px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    background-color: white;
-  }
-  
-  .tip-box {
-    background: #eef7ee;
-    padding: 20px;
-    border-left: 4px solid #4caf50;
-    margin-top: 20px;
-    border-radius: 8px;
-    font-size: 1rem;
-  }
-  
-  .challenge-highlight {
-    margin: 40px 0;
-    padding: 30px;
-    background: #dcedc8;
-    border-left: 6px solid #689f38;
-    font-size: 1.2rem;
-    font-weight: bold;
-    border-radius: 12px;
-    text-align: center;
-  }
-  
-  @keyframes fadeIn {
-    from {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    to {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  }
-  
-  .loader {
-    border: 6px solid #c8e6c9;
-    border-top: 6px solid #2e7d32;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    animation: spin 0.8s linear infinite;
-    margin: 40px auto;
-  }
-  
-  @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
+  box-sizing: border-box;
+}
 
-  .result-preview {
-    background: #f1f8e9;
-    padding: 20px;
-    border-left: 5px solid #7cb342;
-    margin-bottom: 20px;
-    border-radius: 8px;
-    font-size: 1.1rem;
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  background-color: #e8f5e9;
+  color: #333;
+  overflow-x: hidden;
+  transition: background-color 0.6s ease, color 0.6s ease;
+}
+
+header {
+  width: 100%;
+  padding: 50px 20px;
+  background: linear-gradient(90deg, #2e7d32, #66bb6a);
+  color: white;
+  text-align: center;
+  position: relative;
+  transition: background-color 0.6s ease, color 0.6s ease;
+}
+
+header h1 {
+  font-size: 2.8rem;
+  margin-bottom: 10px;
+}
+
+.theme-toggle {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: 2px solid white;
+  padding: 10px 14px;
+  border-radius: 20px;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.4s, transform 0.3s;
+  z-index: 999;
+}
+
+.theme-toggle:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: scale(1.05);
+}
+
+.challenge-box {
+  background: #ffffff22;
+  border: 2px dashed #ffffff88;
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  margin-top: 20px;
+  transition: background-color 0.6s ease, color 0.6s ease;
+}
+
+main {
+  padding: 50px 20px;
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+section {
+  display: none;
+  animation: fadeIn 0.7s ease;
+}
+
+section.active {
+  display: block;
+}
+
+h2 {
+  font-size: 2rem;
+  color: #2e7d32;
+  margin-bottom: 20px;
+  transition: color 0.6s ease;
+}
+
+p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+button {
+  background: #4caf50;
+  border: none;
+  padding: 14px 28px;
+  font-size: 1.1rem;
+  border-radius: 10px;
+  color: white;
+  cursor: pointer;
+  margin-top: 30px;
+  transition: background 0.3s, transform 0.2s;
+}
+
+button:hover {
+  background: #388e3c;
+  transform: scale(1.05);
+}
+
+select {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  margin-top: 15px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background-color: white;
+  color: #333;
+  transition: background-color 0.6s ease, color 0.6s ease;
+}
+
+.tip-box {
+  background: #eef7ee;
+  padding: 20px;
+  border-left: 4px solid #4caf50;
+  margin-top: 20px;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: background-color 0.6s ease, color 0.6s ease;
+}
+
+.challenge-highlight {
+  margin: 40px 0;
+  padding: 30px;
+  background: #dcedc8;
+  border-left: 6px solid #689f38;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border-radius: 12px;
+  text-align: center;
+  transition: background-color 0.6s ease, color 0.6s ease;
+}
+
+.result-preview {
+  background: #f1f8e9;
+  padding: 20px;
+  border-left: 5px solid #7cb342;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  transition: background-color 0.6s ease, color 0.6s ease;
+}
+
+.loader {
+  border: 6px solid #c8e6c9;
+  border-top: 6px solid #2e7d32;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 0.8s linear infinite;
+  margin: 40px auto;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
   }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* DARK MODE */
+
+body.dark {
+  background-color: #121212;
+  color: #f0f0f0;
+}
+
+body.dark header {
+  background: linear-gradient(90deg, #1e1e1e, #2e2e2e);
+  color: #fff;
+}
+
+body.dark .theme-toggle {
+  border: 2px solid #ccc;
+  color: #ccc;
+}
+
+body.dark h2 {
+  color: #90caf9;
+}
+
+body.dark .challenge-box {
+  background: #1e1e1e;
+  border: 2px dashed #666;
+  color: #ddd;
+}
+
+body.dark button {
+  background: #1976d2;
+}
+
+body.dark button:hover {
+  background: #1565c0;
+}
+
+body.dark select {
+  background-color: #2c2c2c;
+  color: #eee;
+  border: 1px solid #555;
+}
+
+body.dark .tip-box {
+  background: #1e1e1e;
+  border-left: 4px solid #90caf9;
+  color: #ddd;
+}
+
+body.dark .challenge-highlight {
+  background: #263238;
+  border-left-color: #90caf9;
+  color: #e0f7fa;
+}
+
+body.dark .result-preview {
+  background: #263238;
+  border-left: 5px solid #90caf9;
+  color: #eee;
+}
+
+body.dark .loader {
+  border: 6px solid #333;
+  border-top: 6px solid #90caf9;
+}

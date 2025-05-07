@@ -207,5 +207,31 @@ const questions = [
     }
   });
 
-  
-  
+  // Theme laden aus Cookie
+function loadThemeFromCookie() {
+  const cookieValue = document.cookie
+    .split('; ')
+    .find(row => row.startsWith('theme='));
+  if (cookieValue && cookieValue.split('=')[1] === 'dark') {
+    document.body.classList.add('dark');
+    document.getElementById('themeToggle').textContent = '☀️ Light Mode';
+  }
+}
+
+// Theme speichern in Cookie
+function saveThemeToCookie(theme) {
+  document.cookie = `theme=${theme};path=/;max-age=31536000`; // 1 Jahr
+}
+
+// Toggle-Button initialisieren
+window.addEventListener('DOMContentLoaded', () => {
+  const toggle = document.getElementById('themeToggle');
+
+  toggle.addEventListener('click', () => {
+    const dark = document.body.classList.toggle('dark');
+    toggle.textContent = dark ? '☀️ Light Mode' : '🌙 Dark Mode';
+    saveThemeToCookie(dark ? 'dark' : 'light');
+  });
+
+  loadThemeFromCookie(); // Beim Laden prüfen
+});
